@@ -1,0 +1,5 @@
+
+client/gradle.properties
+client/build.gradle
+client/app/build.gradle
+client/.idea/misc.xml
