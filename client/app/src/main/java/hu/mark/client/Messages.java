@@ -2,48 +2,49 @@ package hu.mark.client;
 
 public class Messages {
 
-    public Messages(String felado, String cimzett, String message, String targy) {
-        this.felado = felado;
-        this.cimzett = cimzett;
-        this.message = message;
-        this.targy = targy;
+    public Messages(String from, String to, String text, String subject) {
+        this.from = from;
+        this.to = to;
+        this.text = text;
+        this.subject = subject;
     }
 
-    public int getId() { return id; }
-    public String getFelado() {
-        return felado;
+    public String getFrom() {
+        return from;
     }
 
-    public void setFelado(String felado) {
-        this.felado = felado;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public String getCimzett() {
-        return cimzett;
+    public String getTo() {
+        return to;
     }
 
-    public void setCimzett(String cimzett) {
-        this.cimzett = cimzett;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public String getMessage() {
-        return message;
+    public String getText() {
+        return text;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    public String getTargy() {
-        return targy;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public void setTargy(String targy) {
-        this.targy = targy;
+    public String getSubject() {
+        return subject;
     }
 
-    private String felado;
-    private String cimzett;
-    private String message;
-    private String targy;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    String from;
+    String to;
+    String text;
+    String subject;
     int id;
 }
+

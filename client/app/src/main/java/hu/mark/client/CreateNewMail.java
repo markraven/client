@@ -27,8 +27,9 @@ public class CreateNewMail extends Mails {
 
 
         button.setOnClickListener(v -> {
-            Messages sendingMessage= new Messages(cimzett.getText().toString(),
+            Messages sendingMessage= new Messages(
                                                   felado.getText().toString(),
+                                                  cimzett.getText().toString(),
                                                   text.getText().toString(),
                                                   targy.getText().toString());
             JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);

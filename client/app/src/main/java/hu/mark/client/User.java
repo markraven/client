@@ -2,17 +2,17 @@ package hu.mark.client;
 
 public class User {
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public User(String email, String password) {
-        this.email = email;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -23,9 +23,9 @@ public class User {
         this.password = password;
     }
 
-    private String email;
+    String username;
 
-    private String password;
+    String password;
 
     public Integer getId() {
         return id;

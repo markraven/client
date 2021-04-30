@@ -13,7 +13,6 @@ public class OpenedMailActivity extends AppCompatActivity {
     ImageView opened_mail_avatar;
     TextView opened_mail_felado,opened_mail_targy,opened_mail_text;
     Button opened_reply_btn,opened_mail_delete_btn;
-
     String opened_mail_felado_str,opened_mail_targy_str,opened_mail_text_str;
     int opened_mail_avatar_int;
 
@@ -34,9 +33,7 @@ public class OpenedMailActivity extends AppCompatActivity {
     //Mails activityn szerepelt adatok Intenten keresztül áthozatala az OpenedMailActivity-re
     //getData adatok kinyerése a kulcsnevekkel
     private void getData(){
-        if (getIntent().hasExtra("felado") && getIntent().hasExtra("targy")
-                && getIntent().hasExtra("message") && getIntent().hasExtra("images")) {
-
+        if (getIntent().hasExtra("felado") && getIntent().hasExtra("targy") && getIntent().hasExtra("message") && getIntent().hasExtra("images")) {
             opened_mail_felado_str=getIntent().getStringExtra("felado");
             opened_mail_targy_str=getIntent().getStringExtra("targy");
             opened_mail_text_str=getIntent().getStringExtra("message");
@@ -44,7 +41,6 @@ public class OpenedMailActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this,"Nincs adat",Toast.LENGTH_SHORT).show();
         }
-
     }
     //OpenedMailActivity-re a kinyert adatok beállítása.
     private void setData(){

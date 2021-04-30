@@ -15,14 +15,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MailAdapter extends RecyclerView.Adapter<MailAdapter.ViewHolder>  {
 
-    ArrayList<Messages> mails;
-    //TODO:képfeltöltő
+    List<Root> mails;
     int images;
     Context ct;
-    public MailAdapter(ArrayList<Messages> mails, int images, Context ct) {
+    public MailAdapter(List<Root> mails, int images, Context ct) {
         this.mails = mails;
         this.images=images;
         this.ct=ct;
@@ -37,19 +37,17 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.ViewHolder>  {
 
     @Override
     public void onBindViewHolder(@NonNull MailAdapter.ViewHolder holder, int position) {
-    holder.felado.setText(mails.get(position).getFelado());
-    holder.targy.setText(mails.get(position).getTargy());
-    holder.message.setText(mails.get(position).getMessage());
-        //TODO:képfeltöltő
+    holder.felado.setText(mails.get(position).getFrom().getText());
+    holder.targy.setText(mails.get(position).getSubject());
+    holder.message.setText(mails.get(position).getText());
     holder.user_avatar.setImageResource(images);
-
     holder.mainLayout.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(ct,OpenedMailActivity.class);
-            intent.putExtra("felado",mails.get(position).getFelado());
-            intent.putExtra("targy",mails.get(position).getTargy());
-            intent.putExtra("message",mails.get(position).getMessage());
+            intent.putExtra("felado",mails.get(position).getFrom().getText());
+            intent.putExtra("targy",mails.get(position).getSubject());
+            intent.putExtra("message",mails.get(position).getText());
             intent.putExtra("images",images);
             ct.startActivity(intent);
         }
